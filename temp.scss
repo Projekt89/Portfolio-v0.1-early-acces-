@@ -1,0 +1,448 @@
+$space-gray:  #54616C;
+$menu-bg: linear-gradient(90deg, #1996FF 20%,#54616C 100%);
+$main-text: #FFF;
+$secondary-text: darken($main-text, 80%);
+$cta: #1996FF;
+$subtels: #FF9C00;
+
+
+html {
+  font-size: 8px;
+}
+
+body {
+  background-color: $space-gray;
+  color: $main-text;
+  padding: 0;
+  margin: 0;
+  font-family: Lato;
+  font-size: 10px;
+}
+
+a:active {
+  color: inherit;
+}
+
+.hidden {
+  display: none;
+}
+
+.fixed-menu {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  margin: 0 !important;
+}
+
+//header and menu styles
+.page-header {
+  background-image: url(../img/header.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: 50px;
+  min-height: 400px;
+
+  h1 {
+    font-weight: 200;
+    font-size: 3rem;
+    text-align: center;
+    background-color:rgba(25, 150, 255, .7);
+    padding: 15% 0;
+    margin: 0px;
+    margin-top: 0px;
+
+    .word-big {
+      display: block;
+      font-size: 10rem;
+      padding: 20px;
+      font-weight: 500;
+    }
+  }
+}
+
+.navigation {
+  padding-top: 60px;
+}
+
+.navigation-hamburger {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 60px;
+  background: $cta;
+  margin: 0;
+  padding: 10px 9px;
+  border: none;
+  z-index: 100;
+  color: $main-text;
+  font-size: 3.75rem;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  list-style-type: none;
+  padding: 0;
+  background: $menu-bg;
+  width: 100vw;
+  z-index: 99;
+  margin-top: 60px;
+
+  a {
+    position: relative;
+    box-sizing: border-box;
+    text-align: center;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    padding: 15px 0;
+    color: $main-text;
+    text-decoration: none;
+    font-size: 2.4rem;
+    letter-spacing: 1px;
+
+    & > i {
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-height: 100%;
+      width: 60px;
+      font-size: 3.75rem;
+      padding: 10px 0;
+      text-shadow: 0px 0px 5px $cta;
+      background-color: $cta;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0%;
+      height: 5px;
+      background-color: $subtels;
+      transition: width .2s ease-in-out;
+      opacity: .6;
+    }
+
+    &:hover:after{
+      width: 100%;
+    }
+  }
+}
+
+//main styles
+.section-title {
+  margin: 0;
+  text-align: center;
+  font-weight: 300;
+  color: $secondary-text;
+  font-size: 2.4rem;
+  padding: 20px 0;
+}
+
+.paragraph {
+  color: $secondary-text;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  padding: 0 25px;
+  text-align: justify;
+  margin: 0;
+}
+
+.list-item-left {
+  float: left;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.clear {
+  clear: both;
+}
+//What can i do section styles
+.offer {
+  background-color: lighten($space-gray, 70%);
+  padding-bottom: 30px;
+
+  .offer-graphic-container {
+    position: relative;
+    overflow: hidden;
+    width: 320px;
+    margin: 0 auto;
+    padding-bottom: 25px;
+  }
+
+  .offerPic {
+    display: block;
+    float: left;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    box-shadow: 0 4px 10px -3px #888;
+
+    &:nth-child(1) {
+    transform: translate(40%,50%);
+    }
+    &:nth-child(3) {
+      width: 160px;
+      height: 160px;
+      background-color: #FFF;
+      box-shadow: 0 5px 10px -3px #666;
+    transform: translate(-50%,0px);
+    }
+
+    &:nth-child(2) {
+    float: left;
+    transform: translate(160%,50%);
+    }
+  }
+}
+
+//Tools section styles
+.tools {
+  background-color: lighten($space-gray, 50%);
+  overflow: hidden;
+  padding-bottom: 30px;
+
+  .section-title {
+    padding: 25px;
+  }
+
+  .tools-aside {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    background-color: lighten($space-gray, 30%);
+    box-shadow:
+    inset 0px -10px 20px -2px rgba(55,55,55,.5),
+    inset 0px 10px 20px -2px rgba(55,55,55,.5);
+    margin-right: 10px;
+
+
+    &:after {
+      content:'';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 150%;
+      height: 100%;
+      background-image: url(../img/toolbgX.png);
+      background-repeat: repeat;
+      background-size: 250px;
+      transform: rotate(35deg);
+      opacity: .5;
+
+      animation-name: toolsStripes;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    .technology-img {
+      position: relative;
+      width: 17%;
+      display: block;
+      float: left;
+      padding: 4%;
+    }
+  }
+
+  .tools-paragraph {
+    padding-top: 25px;
+  }
+}
+
+//section Jobs styles
+
+.jobs {
+  background-color: lighten($space-gray, 40%);
+  margin-bottom: 30px;
+  overflow: hidden;
+
+  .container {
+    box-sizing: border-box;
+    overflow: hidden;
+    background: linear-gradient( to bottom, lighten($space-gray, 40%) 0%,  $space-gray 100%);
+    padding-bottom: 15px;
+  }
+
+  .jobs-list {
+    margin: 0;
+    padding: 0;
+
+    li {
+      width: 46%;
+      padding: 2%;
+    }
+
+    figure {
+      position: relative;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+
+    }
+
+    figcaption {
+      position: absolute;
+      bottom: 0px;
+      left: 0%;
+      box-sizing: border-box;
+      display: block;
+
+      background-color:rgba(25, 150, 255, .6);
+      box-shadow: 0px 0px 10px -2px #000;
+
+      width: 100%;
+
+
+      text-align: center;
+      font-size: 1.8rem;
+      line-height: 3rem;
+      color: $main-text;
+      text-transform: uppercase;
+    }
+
+  }
+
+  .jobs-item {
+    width: 90%;
+    height: 90%;
+    display: block;
+    margin: 5px 5% 15px;
+
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 3px 3px 0 3px;
+    box-shadow: 0px 0px 15px -5px #000;
+
+    //border-radius: 10px 10px 0 0;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+//section about me styles
+
+.about {
+  background-color: lighten($space-gray, 20%);
+
+  .about-title, .about-paragraph {
+    box-sizing: border-box;
+    border-left: 5px solid $space-gray;
+  }
+
+  .myPicture {
+    float: left;
+    display: block;
+    width: 50%;
+    margin: 0;
+    margin-right: 25px;
+    padding: 0;
+    box-sizing: border-box;
+    border-top: 5px solid $space-gray;
+    border-bottom: 5px solid $space-gray;
+    border-right: 5px solid $space-gray;
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+  }
+
+  .about-paragraph {
+    padding-bottom: 30px;
+  }
+}
+
+
+.contact {
+  padding-bottom: 30px;
+
+  .section-title, .contact-data {
+    color: $main-text;
+  }
+
+  .contact-data {
+    display: block;
+    font-size: 2.2rem;
+    width: 75%;
+    margin: 0 auto;
+    padding: 10px 20px;
+    position: relative;
+
+    &::after {
+      content: '@';
+      position: absolute;
+      top: 15px;
+      left: -40px;
+      font-size: 15rem;
+      font-weight: 800;
+      color: $cta;
+      opacity: .4;
+      z-index: -1;
+    }
+
+    &:nth-child(3)::after {
+      content: '';
+    }
+  }
+
+  form {
+    text-align: center;
+    padding: 20px;
+
+    input, textarea {
+      background-color: rgba(134, 148, 161, .8);
+      width: 75%;
+      margin-top: 15px;
+      padding: 5px;
+      border: none;
+      border-radius: 0px;
+      font-family: inherit;
+      color: $main-text;
+    }
+  }
+}
+
+.footer-container{
+  background-color: $main-text;
+  padding: 25px;
+  overflow: hidden;
+
+  .footer-menu {
+    width: 50%;
+    float: left;
+  }
+
+  .footer-menu-item {
+    display: block;
+    font-size: 2rem;
+    color: $secondary-text;
+    margin: 5px 0;
+  }
+
+  .socials {
+    width: 50%;
+    float: left;
+    margin: 10px 0;
+
+    .icon-container a {
+      width: 50%;
+      float: left;
+      text-align: center;
+      color: $cta;
+      font-size: 4rem;
+      padding: 10px 0;
+    }
+  }
+
+}
